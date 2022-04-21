@@ -1,0 +1,7 @@
+node_modules/
+db/*ldb
+db/*log
+db/CURRENT
+db/LOCK
+db/LOG.old
+db/MANIFEST-004708
