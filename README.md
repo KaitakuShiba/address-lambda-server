@@ -1,4 +1,15 @@
-# imi-enrichment-address
+## 概要
+このプロジェクトはMITライセンスである下記の公開リソースをフォークして、AWS Lambdaで実行できるようにしたものです<br>
+https://info.gbiz.go.jp/tools/imi_tools/index.html
+
+```bash
+$ docker build -t lambda-nodejs .
+$ docker run --platform linux/amd64 --rm -p=9080:8080 lambda-nodejs
+$ curl -X POST -H 'Content-Type: application/json' -d '{"@type":"住所型","表記":"霞が関2"}' localhost:9080
+{"statusCode":200,"body":"\"Hello from Lambda!\""}
+```
+
+# 仕様
 
 入力となる JSON-LD に含まれる `住所>表記 をもつ 場所型` または `表記をもつ住所型` に対して各種のプロパティを補完して返します。
 
